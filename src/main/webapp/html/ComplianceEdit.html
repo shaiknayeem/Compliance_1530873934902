@@ -1,0 +1,187 @@
+<!-- IMPORT MODULE DETAIL -->
+<!-- 
+
+	Module : 	ComplianceEdit
+	
+	Links : 	
+	
+	Nesteds : 	
+				
+-->
+<!-- /IMPORT MODULE DETAIL -->
+<div ng-controller="ComplianceEditController">
+	
+	<h1>
+		<span>ComplianceEdit</span>
+		{{obj.name}}
+	</h1>
+	
+	
+	
+	<div class="well">
+		<form name="skaffolderForm" class="container-fluid mt-20">
+			<div class="row">
+				<div class="col-sm-3">
+					<label for="approvedDate">ApprovedDate</label>
+				</div>
+				<div class="col-sm-9 form-group" ng-class="{ 'has-error' : skaffolderForm.approvedDate.$invalid }">
+					<input string-to-date type="date" ng-model="obj.approvedDate" ng-value="obj.approvedDate|date:'yyyy-MM-dd'" class="form-control" name="approvedDate" id="approvedDate" >
+		 			
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-sm-3">
+					<label for="aprroverName">AprroverName</label>
+				</div>
+				<div class="col-sm-9 form-group" ng-class="{ 'has-error' : skaffolderForm.aprroverName.$invalid }">
+					<input  type="text" ng-model="obj.aprroverName"  class="form-control" name="aprroverName" id="aprroverName" >
+		 			
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-sm-3">
+					<label for="compliance_id">Compliance_id</label>
+				</div>
+				<div class="col-sm-9 form-group" ng-class="{ 'has-error' : skaffolderForm.compliance_id.$invalid }">
+					<input  type="text" ng-model="obj.compliance_id"  class="form-control" name="compliance_id" id="compliance_id" >
+		 			
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-sm-3">
+					<label for="createdBy">CreatedBy</label>
+				</div>
+				<div class="col-sm-9 form-group" ng-class="{ 'has-error' : skaffolderForm.createdBy.$invalid }">
+					<input  type="text" ng-model="obj.createdBy"  class="form-control" name="createdBy" id="createdBy" >
+		 			
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-sm-3">
+					<label for="createdDate">CreatedDate</label>
+				</div>
+				<div class="col-sm-9 form-group" ng-class="{ 'has-error' : skaffolderForm.createdDate.$invalid }">
+					<input string-to-date type="date" ng-model="obj.createdDate" ng-value="obj.createdDate|date:'yyyy-MM-dd'" class="form-control" name="createdDate" id="createdDate" >
+		 			
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-sm-3">
+					<label for="isactive">Isactive</label>
+				</div>
+				<div class="col-sm-9 form-group" ng-class="{ 'has-error' : skaffolderForm.isactive.$invalid }">
+					<input  type="checkbox" ng-model="obj.isactive"  class="form-control" name="isactive" id="isactive" >
+		 			
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-sm-3">
+					<label for="lawType">LawType</label>
+				</div>
+				<div class="col-sm-9 form-group" ng-class="{ 'has-error' : skaffolderForm.lawType.$invalid }">
+					<input  type="text" ng-model="obj.lawType"  class="form-control" name="lawType" id="lawType" >
+		 			
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-sm-3">
+					<label for="penalty">Penalty</label>
+				</div>
+				<div class="col-sm-9 form-group" ng-class="{ 'has-error' : skaffolderForm.penalty.$invalid }">
+					<input  type="text" ng-model="obj.penalty"  class="form-control" name="penalty" id="penalty" >
+		 			
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-sm-3">
+					<label for="publishedBy">PublishedBy</label>
+				</div>
+				<div class="col-sm-9 form-group" ng-class="{ 'has-error' : skaffolderForm.publishedBy.$invalid }">
+					<input  type="text" ng-model="obj.publishedBy"  class="form-control" name="publishedBy" id="publishedBy" >
+		 			
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-sm-3">
+					<label for="publishedOn">PublishedOn</label>
+				</div>
+				<div class="col-sm-9 form-group" ng-class="{ 'has-error' : skaffolderForm.publishedOn.$invalid }">
+					<input string-to-date type="date" ng-model="obj.publishedOn" ng-value="obj.publishedOn|date:'yyyy-MM-dd'" class="form-control" name="publishedOn" id="publishedOn" >
+		 			
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-sm-3">
+					<label for="regulator">Regulator</label>
+				</div>
+				<div class="col-sm-9 form-group" ng-class="{ 'has-error' : skaffolderForm.regulator.$invalid }">
+					<input  type="text" ng-model="obj.regulator"  class="form-control" name="regulator" id="regulator" >
+		 			
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-sm-3">
+					<label for="section">Section</label>
+				</div>
+				<div class="col-sm-9 form-group" ng-class="{ 'has-error' : skaffolderForm.section.$invalid }">
+					<input  type="text" ng-model="obj.section"  class="form-control" name="section" id="section" >
+		 			
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-sm-3">
+					<label for="status">Status</label>
+				</div>
+				<div class="col-sm-9 form-group" ng-class="{ 'has-error' : skaffolderForm.status.$invalid }">
+					<input  type="text" ng-model="obj.status"  class="form-control" name="status" id="status" >
+		 			
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-sm-3">
+					<label for="version">Version</label>
+				</div>
+				<div class="col-sm-9 form-group" ng-class="{ 'has-error' : skaffolderForm.version.$invalid }">
+					<input  type="text" ng-model="obj.version"  class="form-control" name="version" id="version" >
+		 			
+				</div>
+			</div>
+			
+			
+			
+			
+			
+	
+			<div class="row mt-40">
+				<button ng-if="obj._id" class="btn btn-danger" data-toggle="modal" data-target="#removeModal">
+					<i class="glyphicon glyphicon-trash"></i> Remove
+				</button>
+				
+				<button type="submit" class="btn btn-primary pull-right" ng-disabled="skaffolderForm.$invalid" ng-click="save()">Save</button>
+			    <button class="btn btn-link pull-right" ng-link="/compliances/">Back to List</button>
+			</div>
+			<div class="clearfix"></div>
+		</form>
+		
+	</div>
+	
+	
+	<!-- MODAL REMOVE -->
+	<div class="modal fade" id="removeModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+					<h4 class="modal-title" id="myModalLabel">Delete item</h4>
+				</div>
+				<div class="modal-body">
+					Do you want confirm delete? 
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">NO</button>
+					<button type="button" class="btn btn-primary" data-dismiss="modal" ng-click="remove()">YES</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

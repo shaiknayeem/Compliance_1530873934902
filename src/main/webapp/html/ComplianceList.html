@@ -1,0 +1,185 @@
+<!-- IMPORT MODULE DETAIL -->
+<!-- 
+
+	Module : 	ComplianceList
+	
+	Links : 	ComplianceEdit
+					/compliances/{id}
+.				
+	
+	Nesteds : 	
+				
+-->
+<!-- /IMPORT MODULE DETAIL -->
+<div ng-controller="ComplianceListController">
+	
+	<h1>ComplianceList</h1>
+	
+	<!-- SEARCH FORM -->
+	<div class="well">
+	    <form name="form_search" class="container-fluid">
+			<div class="row">
+				<div class="col-sm-3">
+					<label for="approvedDate">ApprovedDate</label>
+				</div>
+				<div class="col-sm-9 form-group" >
+					<input type="date" ng-model="search.approvedDate" class="form-control" name="approvedDate" id="approvedDate" >
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-sm-3">
+					<label for="aprroverName">AprroverName</label>
+				</div>
+				<div class="col-sm-9 form-group" >
+					<input type="text" ng-model="search.aprroverName" class="form-control" name="aprroverName" id="aprroverName" >
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-sm-3">
+					<label for="compliance_id">Compliance_id</label>
+				</div>
+				<div class="col-sm-9 form-group" >
+					<input type="text" ng-model="search.compliance_id" class="form-control" name="compliance_id" id="compliance_id" >
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-sm-3">
+					<label for="createdBy">CreatedBy</label>
+				</div>
+				<div class="col-sm-9 form-group" >
+					<input type="text" ng-model="search.createdBy" class="form-control" name="createdBy" id="createdBy" >
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-sm-3">
+					<label for="createdDate">CreatedDate</label>
+				</div>
+				<div class="col-sm-9 form-group" >
+					<input type="date" ng-model="search.createdDate" class="form-control" name="createdDate" id="createdDate" >
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-sm-3">
+					<label for="isactive">Isactive</label>
+				</div>
+				<div class="col-sm-9 form-group" >
+					<input type="checkbox" ng-model="search.isactive" class="form-control" name="isactive" id="isactive" >
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-sm-3">
+					<label for="lawType">LawType</label>
+				</div>
+				<div class="col-sm-9 form-group" >
+					<input type="text" ng-model="search.lawType" class="form-control" name="lawType" id="lawType" >
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-sm-3">
+					<label for="penalty">Penalty</label>
+				</div>
+				<div class="col-sm-9 form-group" >
+					<input type="text" ng-model="search.penalty" class="form-control" name="penalty" id="penalty" >
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-sm-3">
+					<label for="publishedBy">PublishedBy</label>
+				</div>
+				<div class="col-sm-9 form-group" >
+					<input type="text" ng-model="search.publishedBy" class="form-control" name="publishedBy" id="publishedBy" >
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-sm-3">
+					<label for="publishedOn">PublishedOn</label>
+				</div>
+				<div class="col-sm-9 form-group" >
+					<input type="date" ng-model="search.publishedOn" class="form-control" name="publishedOn" id="publishedOn" >
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-sm-3">
+					<label for="regulator">Regulator</label>
+				</div>
+				<div class="col-sm-9 form-group" >
+					<input type="text" ng-model="search.regulator" class="form-control" name="regulator" id="regulator" >
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-sm-3">
+					<label for="section">Section</label>
+				</div>
+				<div class="col-sm-9 form-group" >
+					<input type="text" ng-model="search.section" class="form-control" name="section" id="section" >
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-sm-3">
+					<label for="status">Status</label>
+				</div>
+				<div class="col-sm-9 form-group" >
+					<input type="text" ng-model="search.status" class="form-control" name="status" id="status" >
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-sm-3">
+					<label for="version">Version</label>
+				</div>
+				<div class="col-sm-9 form-group" >
+					<input type="text" ng-model="search.version" class="form-control" name="version" id="version" >
+				</div>
+			</div>
+		</form>
+	</div>
+	
+	<!-- TABLE -->
+	<table class="table table-condensed table-striped table-bordered table-hover">
+		<thead>
+			<tr>
+				<th>_id</th>
+				<th>approvedDate</th>
+				<th>aprroverName</th>
+				<th>compliance_id</th>
+				<th>createdBy</th>
+				<th>createdDate</th>
+				<th>isactive</th>
+				<th>lawType</th>
+				<th>penalty</th>
+				<th>publishedBy</th>
+				<th>publishedOn</th>
+				<th>regulator</th>
+				<th>section</th>
+				<th>status</th>
+				<th>version</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr ng-repeat="item in list | filter: {  approvedDate:dateFilter(search.approvedDate),  aprroverName:search.aprroverName,  compliance_id:search.compliance_id,  createdBy:search.createdBy,  createdDate:dateFilter(search.createdDate),  isactive:search.isactive,  lawType:search.lawType,  penalty:search.penalty,  publishedBy:search.publishedBy,  publishedOn:dateFilter(search.publishedOn),  regulator:search.regulator,  section:search.section,  status:search.status,  version:search.version,  }">
+				<td ng-bind="item._id" ng-link="/compliances/{{item._id}}"></td>
+				<td ng-bind="item.approvedDate | date"></td>
+				<td ng-bind="item.aprroverName"></td>
+				<td ng-bind="item.compliance_id"></td>
+				<td ng-bind="item.createdBy"></td>
+				<td ng-bind="item.createdDate | date"></td>
+				<td ng-bind="item.isactive"></td>
+				<td ng-bind="item.lawType"></td>
+				<td ng-bind="item.penalty"></td>
+				<td ng-bind="item.publishedBy"></td>
+				<td ng-bind="item.publishedOn | date"></td>
+				<td ng-bind="item.regulator"></td>
+				<td ng-bind="item.section"></td>
+				<td ng-bind="item.status"></td>
+				<td ng-bind="item.version"></td>
+			</tr>
+		</tbody>
+	</table>
+	
+	<div class="mb-20" ng-if="list.$resolved && (list | filter :{   approvedDate:dateFilter(search.approvedDate),  aprroverName:search.aprroverName,  compliance_id:search.compliance_id,  createdBy:search.createdBy,  createdDate:dateFilter(search.createdDate),  isactive:search.isactive,  lawType:search.lawType,  penalty:search.penalty,  publishedBy:search.publishedBy,  publishedOn:dateFilter(search.publishedOn),  regulator:search.regulator,  section:search.section,  status:search.status,  version:search.version,  }).length == 0">
+        <b>No result found</b>
+    </div>
+
+	<!-- BUTTON -->
+	<button class="btn btn-primary" ng-link="/compliances/new">New</button>
+	
+</div>
